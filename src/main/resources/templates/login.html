@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth Server</title>
+</head>
+<body>
+    <div id="login-page">
+        <div id="login-form">
+            <h1>Login</h1>
+
+            <div class="message error" th:if="${param.error}">
+                잘못된 입력입니다. 아이디 또는 비밀번호를 다시 확인하세요.
+            </div>
+
+            <form th:action="@{/login}" method="post">
+                <div>
+                    <input type="text" name="username" placeholder="아이디"/>
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="비밀번호"/>
+                </div>
+                <div>
+                    <button type="submit">로그인</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
